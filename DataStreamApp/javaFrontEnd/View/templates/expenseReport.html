@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Expense Report</title>
+</head>
+<body>
+<h1>Expense Report for User</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Count</th>
+        <th>Description</th>
+        <th>Expense Type</th>
+        <th>Payment</th>
+        <th>Timestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${expenseReport}">
+        <td th:text="${row.getAs('count')}"></td>
+        <td th:text="${row.getAs('description')}"></td>
+        <td th:text="${row.getAs('expensetype')}"></td>
+        <td th:text="${row.getAs('payment')}"></td>
+        <td th:text="${row.getAs('timestamp')}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
